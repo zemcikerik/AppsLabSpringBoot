@@ -1,5 +1,10 @@
 package sk.zemco.appslabspringboot.model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(EmployeeJobType.Value.TEACHER)
 public class Teacher extends Employee {
 
     public Teacher() {
