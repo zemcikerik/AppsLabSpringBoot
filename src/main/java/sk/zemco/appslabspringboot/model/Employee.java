@@ -1,5 +1,6 @@
 package sk.zemco.appslabspringboot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -23,6 +24,7 @@ public class Employee {
     protected long id;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "company_id", nullable = false, insertable = false, updatable = false)
     protected Company company;
 
