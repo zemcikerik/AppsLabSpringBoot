@@ -16,12 +16,4 @@ public class AppsLabSpringBootApplication {
         SpringApplication.run(AppsLabSpringBootApplication.class, args);
     }
 
-    public static List<Employee> createExampleEmployeeList() {
-        return List.of(
-                new Programmer(1000, 100),
-                new Teacher(2000, 200),
-                new Driver(3000, 300)
-        );
-    }
-
 }
