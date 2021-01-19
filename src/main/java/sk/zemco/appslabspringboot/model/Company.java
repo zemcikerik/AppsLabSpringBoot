@@ -3,6 +3,8 @@ package sk.zemco.appslabspringboot.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Set;
 
 @Entity
 @Table(name = "company")
@@ -13,11 +15,15 @@ public class Company {
     private long id;
 
     @NotBlank
+    @Size(max = 40)
     private String name;
 
     @NotNull
     @Embedded
     private Address address;
+
+    @OneToMany(mappedBy = "company")
+    private Set<Employee> employees;
 
     public Company() {
     }

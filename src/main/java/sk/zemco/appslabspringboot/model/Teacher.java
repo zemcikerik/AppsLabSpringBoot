@@ -11,8 +11,12 @@ public class Teacher extends Employee {
         super(EmployeeJobType.TEACHER);
     }
 
-    public Teacher(float salary, int bonus) {
-        super(salary, bonus, EmployeeJobType.TEACHER);
+    public Teacher(Company company, float salary, int bonus, EmployeeJobType type) {
+        super(company, salary, bonus, EmployeeJobType.TEACHER);
+    }
+
+    public Teacher(long companyId, float salary, int bonus, EmployeeJobType type) {
+        super(companyId, salary, bonus, EmployeeJobType.TEACHER);
     }
 
 }

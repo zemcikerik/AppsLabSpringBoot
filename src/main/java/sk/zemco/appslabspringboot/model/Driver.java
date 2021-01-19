@@ -11,8 +11,12 @@ public class Driver extends Employee {
         super(EmployeeJobType.DRIVER);
     }
 
-    public Driver(float salary, int bonus) {
-        super(salary, bonus, EmployeeJobType.DRIVER);
+    public Driver(Company company, float salary, int bonus) {
+        super(company, salary, bonus, EmployeeJobType.DRIVER);
+    }
+
+    public Driver(long companyId, float salary, int bonus) {
+        super(companyId, salary, bonus, EmployeeJobType.DRIVER);
     }
 
 }
