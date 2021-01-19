@@ -37,8 +37,6 @@ public class CompanyController {
     @PostMapping
     public ResponseEntity<?> addCompany(@RequestBody @NonNull @Valid Company company) {
         company.setId(0);
-        company.getAddress().setId(0);
-
         Company addedCompany = this.companyService.addCompany(company);
 
         URI location = ServletUriComponentsBuilder

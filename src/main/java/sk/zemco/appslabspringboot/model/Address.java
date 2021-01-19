@@ -1,15 +1,10 @@
 package sk.zemco.appslabspringboot.model;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.NotBlank;
 
-@Entity
-@Table(name = "address")
+@Embeddable
 public class Address {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
     @NotBlank
     private String street;
@@ -26,20 +21,11 @@ public class Address {
     public Address() {
     }
 
-    public Address(long id, String street, String zipCode, String city, String state) {
-        this.id = id;
+    public Address(String street, String zipCode, String city, String state) {
         this.street = street;
         this.zipCode = zipCode;
         this.city = city;
         this.state = state;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getStreet() {

@@ -1,7 +1,5 @@
 package sk.zemco.appslabspringboot.model;
 
-import org.springframework.lang.NonNull;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -18,15 +16,13 @@ public class Company {
     private String name;
 
     @NotNull
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @Embedded
     private Address address;
 
     public Company() {
     }
 
-    public Company(long id, String name, Address address) {
-        this.id = id;
+    public Company(String name, Address address) {
         this.name = name;
         this.address = address;
     }
